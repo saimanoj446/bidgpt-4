@@ -23,13 +23,13 @@ def load_knowledge_base(path='knowledge_base.txt'):
 kb_entries = load_knowledge_base()
 vectorizer = TfidfVectorizer().fit(kb_entries)
 
-# OpenRouter client
+# Groq client
 client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=os.environ.get("OPENROUTER_API_KEY")
+    base_url="https://api.groq.com/openai/v1",
+    api_key=os.environ.get("GROQ_API_KEY")
 )
 
-print("OPENROUTER_API_KEY:", os.environ.get("OPENROUTER_API_KEY"))
+print("GROQ_API_KEY:", os.environ.get("GROQ_API_KEY"))
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -52,12 +52,7 @@ def chat():
     )
 
     completion = client.chat.completions.create(
-        extra_headers={
-            "HTTP-Referer": "<YOUR_SITE_URL>",
-            "X-Title": "<YOUR_SITE_NAME>",
-        },
-        extra_body={},
-        model="deepseek/deepseek-r1-0528-qwen3-8b:free",
+        model="llama-3.1-8b-instant",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_message}
