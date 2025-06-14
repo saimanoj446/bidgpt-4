@@ -23,7 +23,7 @@ vectorizer = TfidfVectorizer().fit(kb_entries)
 # OpenRouter client
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key="OPENROUTER_API_KEY"
 )
 
 @app.route('/chat', methods=['POST'])
