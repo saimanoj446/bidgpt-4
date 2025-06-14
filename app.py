@@ -29,8 +29,6 @@ client = OpenAI(
     api_key=os.environ.get("OPENROUTER_API_KEY")
 )
 
-print("OPENROUTER_API_KEY:", os.environ.get("OPENROUTER_API_KEY"))
-
 @app.route('/chat', methods=['POST'])
 def chat():
     user_message = request.json.get('message', '')
