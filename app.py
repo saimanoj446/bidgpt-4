@@ -4,6 +4,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from openai import OpenAI
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__, static_folder='static')
 CORS(app)
