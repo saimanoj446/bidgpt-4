@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chatbot-icon" id="chatbotIcon">
+            <img src="logo.png" alt="Chatbot Logo" class="chatbot-logo">
+            <div class="text-bubble">
+                Ask BidGPT
+            </div>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <img src="logo.png" alt="BidGPT Logo" class="header-logo">
+                <div class="header-titles">
+                    <div class="header-title">BidGPT</div>
+                    <div class="header-subtitle">AI Assistant</div>
+                </div>
+                <button class="feedback-btn">Provide Feedback</button>
+                <button class="close-btn" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot bot-welcome">
+                    <img src="logo.png" alt="Bot Logo" class="bot-message-logo">
+                    <div class="message-content">
+                        Hello! How can I assist you today?
+                    </div>
+                </div>
+                <div class="chatbot-options">
+                    <button class="option-btn">Government Tenders <span class="arrow">&gt;</span></button>
+                    <button class="option-btn">State Tenders <span class="arrow">&gt;</span></button>
+                    <button class="option-btn">Central Tenders <span class="arrow">&gt;</span></button>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <div class="feedback-overlay" id="feedbackOverlay"></div>
+        <div class="feedback-modal" id="feedbackModal">
+            <div class="feedback-header">
+                <span class="feedback-title">We value your feedback</span>
+                <button class="feedback-close" id="feedbackCloseBtn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="feedback-body">
+                <div class="feedback-question">How satisfied are you with our service?</div>
+                <div class="feedback-emojis" id="feedbackEmojis">
+                    <span class="emoji" data-value="1" title="Very Dissatisfied">&#128545;</span>
+                    <span class="emoji" data-value="2" title="Dissatisfied">&#128552;</span>
+                    <span class="emoji" data-value="3" title="Neutral">&#128528;</span>
+                    <span class="emoji" data-value="4" title="Satisfied">&#128522;</span>
+                    <span class="emoji" data-value="5" title="Very Satisfied">&#128515;</span>
+                </div>
+                <div class="feedback-desc">Let us know how your experience was or what we can improve.</div>
+                <textarea class="feedback-textarea" id="feedbackTextarea" placeholder="Share your thoughts with us..."></textarea>
+            </div>
+            <div class="feedback-actions">
+                <button class="feedback-cancel" id="feedbackCancelBtn">Cancel</button>
+                <button class="feedback-submit" id="feedbackSubmitBtn">Submit Feedback</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
